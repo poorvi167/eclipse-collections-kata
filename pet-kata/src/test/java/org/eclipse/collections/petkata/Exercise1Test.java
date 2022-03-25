@@ -48,7 +48,8 @@ public class Exercise1Test extends PetDomainForKata
         MutableList<Pet> pets = person.getPets();
 
         // Replace null, with a transformation method on MutableList.
-        MutableList<String> names = null; // pets...
+        MutableList<String> names = pets.select(people -> person.named("Mary Smith"))
+                .collect(Pet::getName); // pets...
 
         Assertions.assertEquals("Tabby", names.makeString());
     }
