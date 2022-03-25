@@ -69,7 +69,7 @@ public class Exercise1Test extends PetDomainForKata
     public void getPeopleWithoutCats()
     {
         // Replace null, with a negative filtering method on MutableList.
-        MutableList<Person> peopleWithoutCats = null;  // this.people...
+        MutableList<Person> peopleWithoutCats = this.people.reject(person -> person.hasPet(PetType.CAT));  // this.people...
 
         Verify.assertSize(6, peopleWithoutCats);
     }
